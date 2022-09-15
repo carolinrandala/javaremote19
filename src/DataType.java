@@ -10,6 +10,7 @@
     byte byteNumber = 120;
     long longNumber = 545454681351L;
     short shortNumber = -32000;
+
     float decimalNumber = 2.45f;
     double doubleNumber = 3.456d;
 
@@ -59,7 +60,6 @@
     public static void main(String[] args) {
         int k = 0;
         Integer y = null;
-
 
         System.out.println(k);
         System.out.println(y);
