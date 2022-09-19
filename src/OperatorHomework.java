@@ -11,7 +11,7 @@ public class OperatorHomework {
         /*
         1. y = (56 / 8) * e - a + i;
         2. y = 7 * 7 - a + i;
-        3. y = 49 - 15 + i;
+        3. y = 49 - 15 + 12;
         4. y = 34 + 12
         5. y = 46
          */
