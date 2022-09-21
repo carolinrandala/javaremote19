@@ -9,4 +9,6 @@ public class Homework3 {
 
         int j = 15;
 
-        System.out.println(j % 3 == 0 && j % 5 == 0 ? "fizzbuzz " : ((j % 3 == 0) ? "fizz " : ((j % 5 == 0) ? "buzz " : j + " ")));
+        System.out.println(j % 3 == 0 && j % 5 == 0? "fizzbuzz " : ((j % 3 == 0) ? "fizz " : ((j % 5 == 0) ? "buzz " : j + "")));
+    }
+}

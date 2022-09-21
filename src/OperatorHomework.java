@@ -20,3 +20,5 @@ public class OperatorHomework {
         5. y = 46
          */
         System.out.println(y);
+    }
+}
