@@ -1,3 +1,7 @@
+/**
+ * Homework3
+ * @author carolinrandala
+ */
 public class Homework2 {
     public static void main(String[] args) {
         String x = "car";
