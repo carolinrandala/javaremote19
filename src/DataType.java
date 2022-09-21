@@ -1,5 +1,5 @@
 /**
- * Example of Pimitive datatype
+ * Example of datatypes
  *
  * @author carolinrandala
  */
