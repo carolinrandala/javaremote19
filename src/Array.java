@@ -64,9 +64,12 @@ public class Array {
         //Homework4
         //To find smallest element in array (b)
 
-
-
-
+        for(int x: b) {
+            if(x < result){
+                result = x;
+            }
     }
+        System.out.println(result);
+}
 }
 
