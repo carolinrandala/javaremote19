@@ -1,3 +1,5 @@
+import examples.DataType;
+
 /**
  * The first hello world program
  *

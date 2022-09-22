@@ -1,3 +1,5 @@
+package examples;
+
 /**
  * Example of datatypes
  *

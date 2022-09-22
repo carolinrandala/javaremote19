@@ -1,3 +1,5 @@
+package homeworks;
+
 public class OperatorHomework {
     public static void main(String[] args) {
         int d = 8;
