@@ -1,5 +1,5 @@
 /**
- * exercise
+ * Exercise
  *
  * @author carolinrandala
  */

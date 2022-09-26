@@ -1,5 +1,5 @@
 /**
- * Homework3
+ * Homework2
  * @author carolinrandala
  */
 public class Homework2 {
