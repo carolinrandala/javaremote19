@@ -4,9 +4,7 @@
  */
 public class Exercise6b {
     public int findSecondLargestElement(int[] array, int largest, int secondLargest){
-
-
-
+        int result = array[0];
 
 
         for (int i = 0; i < array.length; i++) {
@@ -19,7 +17,7 @@ public class Exercise6b {
 
             }
         }
-        return secondLargest;
+        return result;
     }
 }
 
