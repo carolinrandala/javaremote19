@@ -2,7 +2,7 @@
  * To find second largest element in an Array
  * @author Carolin
  */
-public class Exercise6b {
+public class Homework6b {
     public int findSecondLargestElement(int[] array){
         int result = array[0];
 
