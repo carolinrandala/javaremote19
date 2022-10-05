@@ -19,7 +19,7 @@ public class IntegerDisplay {
 
         for(int i = 1; i <= 4; i++) {
             for(int j = 0; j < i; j++){
-                System.out.print(4);
+                System.out.print(number);
             }
             System.out.println();
         }
