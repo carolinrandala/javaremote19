@@ -8,7 +8,7 @@ public class Divide {
 
         System.out.println("Enter two numbers to divide their value");
 
-        int a = scanner.nextByte();
+        int a = scanner.nextInt();
         int b = scanner.nextInt();
         int value = (a / b);
 
