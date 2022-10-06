@@ -15,5 +15,8 @@ public class Capitalize {
 
         String input = scanner.nextLine();
         System.out.println(input.toUpperCase());
+
+
+
     }
 }
