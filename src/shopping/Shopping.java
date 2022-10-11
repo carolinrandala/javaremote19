@@ -17,41 +17,9 @@ import java.util.Scanner;
  */
 public class Shopping {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int mainMenuOption = displayMainMenu();
-        Cart cart = new Cart();
-
-        switch(mainMenuOption) {
-            case 1:  // show products
-                boolean hasMoreShopping = false;
-                int counter = 0;
-                ProductLine[] products = new ProductLine[5]; //It can hold only 5 products
-                do {
-                    ProductLine productLine = getProductToCart();
-                    products[counter] = productLine;
-                    cart.setProducts(products);
-                    System.out.println("Do you want to shop more products?");
-                    String errorMessage = "Incorrect answer. Please enter again:";
-                    boolean checker = false;
-                    do {
-                        if(scanner.hasNextBoolean()) {
-                            System.out.println(errorMessage);
-                        } else {
-                            hasMoreShopping = scanner.nextBoolean();
-                            checker = true;
-                        }
-                    } while (!checker);
-                    if (hasMoreShopping && counter < 5) {
-                        counter++;
-                    } else {
-                        hasMoreShopping = false;
-                        System.out.println("Your limit reached. Please proceed to pay!");
-                    }
-                }while(hasMoreShopping);
-
-        }
-
+       Cart cart = mainMenu(new Cart());
         System.out.println(Arrays.toString(cart.getProducts()));
+        System.out.println(cart.getTotalPrice());
     }
         private static Product[] getRandomProducts() {
 
@@ -79,12 +47,68 @@ public class Shopping {
 
         }
 
+        private static Cart mainMenu(Cart cart) {
+            Scanner scanner = new Scanner(System.in);
+            int mainMenuOption = displayMainMenu();
+
+            switch(mainMenuOption) {
+                case 1:  // show products
+                    boolean hasMoreShopping = false;
+                    int counter = 0;
+                    int cartLimit = 5;
+                    float totalPrice = 0;
+                    ProductLine[] products = new ProductLine[cartLimit]; //It can hold only 5 products
+                    do {
+                        if (counter >= cartLimit) {
+                            System.out.println("Your limit reached. Enter again please");
+                            break;
+                        }
+
+                        ProductLine productLine = getProductToCart();
+
+                        if(productLine == null) {
+                            mainMenu(cart);
+                        } else {
+                            products[counter] = productLine;
+                            cart.setProducts(products);
+                            totalPrice += productLine.getPrice();
+                            cart.setTotalPrice(totalPrice);
+
+                            System.out.println("Do you want to shop more products?");
+                            String errorMessage = "Incorrect answer. Please enter again:";
+                            boolean checker = false;
+
+                            do {
+                                if (!scanner.hasNextBoolean()) {
+                                    System.out.println();
+                                    scanner.next();
+                                } else {
+                                    hasMoreShopping = scanner.nextBoolean();
+                                    checker = true;
+                                }
+                            } while (!checker);
+
+                            if (hasMoreShopping) {
+                                counter++;
+                            }
+                        }
+                    } while (hasMoreShopping);
+
+                case 2:
+                    //Shopping cart
+                case 3:
+                    System.out.println("Thanks for shopping!");
+
+            }
+
+            return cart;
+        }
         private static int displayMainMenu() {
 
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Main Menu \n--------------------");
-        System.out.println("1. Shop products \n2. Shopping cart \n3.Exit");
+        System.out.println("1.Shop products \n2.Shopping cart \n3.Exit");
         System.out.println("Choose an option from above:");
 
             return getMenuOption(3);
@@ -158,6 +182,7 @@ public class Shopping {
             do {
                 if(!scanner.hasNextInt()) {
                     System.out.println(errorMessage);
+                    scanner.next();
                 } else {
                     option = scanner.nextInt(); // correct input
 
