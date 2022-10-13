@@ -24,6 +24,8 @@ import java.util.Scanner;
  * Total score: 4
  * The correct answers:
  *
+ * 1. Display the correct answers for each question
+ * 2. Calculate total score
  */
 public class Quiz {
     public static void main(String[] args) {
@@ -33,27 +35,50 @@ public class Quiz {
         System.out.println("---------------------");
 
         int totalScore = 0;
-        boolean hasPassed = false;
         int rightAnswer = 1;
-        int wrongAnswer = 0;
+        boolean hasPassed;
 
         Question[] questions = getRandomQuestion();
-        Answer[] answers = new int[questions.length];
+        Answer[] userAnswers = new Answer[questions.length];
 
-        for(question questions: questions) {
+        // Display questions and options
+        for (int j = 0; j < questions.length; j++) {
+            Question question = questions[j];
             System.out.println(question.getDescription());
 
-            for(int i = 0; i < questions.getOptions().length; i++) {
-                System.out.println(i + ". " + questions.getOptions()[i]);
+            for (int i = 0; i < question.getOptions().length; i++) {
+                System.out.println(i + ". " + question.getOptions()[i]);
             }
-            System.out.println("Choose an option from above");
-            answers[j] = getAnswersOption(questions.getOptions().length);
+
+            System.out.println("Choose an option from above:");
+
+            //Creating a user answer object and assign it to the userAnswer array
+            Answer answer = new Answer();
+            answer.setQuestionId(question.getId());
+            answer.setCorrectOptionIndex(getAnswerOptions(question.getOptions().length));
+            userAnswers[j] = answer;
         }
 
         Answer[] correctAnswers = getAnswers();
 
+        // Total Score Calculation: Compare answerOptios of CorrectAnswer and the userAnswer
+        for (Answer correctAnswer : correctAnswers) {
+            for (Answer userAnswer : userAnswers) {
+                if (correctAnswer.getQuestionId() == userAnswer.getQuestionId() && correctAnswer.getCorrectOptionIndex() == userAnswer.getCorrectOptionIndex()) {
+                    totalScore += rightAnswer;
+                }
+            }
+        }
 
+        System.out.println("Total score: " + totalScore);
+
+        //Pass score is 50%
+        hasPassed = totalScore >= questions.length / 2;
+
+        System.out.println(hasPassed ? "PASSED!" : "FAILED!!");
     }
+
+
 
     private static Question[] getRandomQuestion() {
 
@@ -65,7 +90,7 @@ public class Quiz {
         Question question2 = new Question();
         question2.setId(10001L);
         question2.setDescription("What is the bigger lake in Estonia?");
-        question2.setOptions(new String[]{"Peipus", "Uljaste", "Võrtsjärv"});
+        question2.setOptions(new String[]{"Peipsi", "Uljaste", "Võrtsjärv"});
 
         Question question3 = new Question();
         question3.setId(10002L);
@@ -85,19 +110,39 @@ public class Quiz {
         return new Question[]{question1, question2, question3, question4, question5};
     }
 
-        private static int getAnswers() {
+        private static Answer[] getAnswers() {
             Answer answer1 = new Answer();
             answer1.setId(20000L);
             answer1.setQuestionId(10000L);
             answer1.setCorrectOptionIndex(0);
 
             Answer answer2 = new Answer();
+            answer2.setId(20001L);
+            answer2.setQuestionId(10001L);
+            answer2.setCorrectOptionIndex(0);
 
+            Answer answer3 = new Answer();
+            answer3.setId(20002L);
+            answer3.setQuestionId(10003L);
+            answer3.setCorrectOptionIndex(0);
+
+            Answer answer4 = new Answer();
+            answer4.setId(20003L);
+            answer4.setQuestionId(10004L);
+            answer4.setCorrectOptionIndex(2);
+
+            Answer answer5 = new Answer();
+            answer5.setId(20004L);
+            answer5.setQuestionId(10005L);
+            answer5.setCorrectOptionIndex(0);
+
+
+            return new Answer[] {answer1, answer2, answer3, answer4, answer5};
 
         }
             private static int getAnswerOptions(int limit) {
                 Scanner scanner = new Scanner(System.in);
-                String errorMessage = "Incorrect option! Please enter again:";
+                String errorMessage = "Incorrect answer! Please try again:";
                 int option = limit + 1;
                 do {
                     if (!scanner.hasNextInt()) {
@@ -121,5 +166,5 @@ public class Quiz {
 
 
 
-    }
-}
+
+
