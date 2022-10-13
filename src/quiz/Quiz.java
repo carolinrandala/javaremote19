@@ -57,40 +57,41 @@ public class Quiz {
 
     private static Question[] getRandomQuestion() {
 
-        Question question1 = new Questions();
+        Question question1 = new Question();
         question1.setId(10000L);
         question1.setDescription("What is the capital of Estonia?");
-        question1.setOptions(new String[]{"Tallinn" , "Tartu" , "Narva"});
+        question1.setOptions(new String[]{"Tallinn", "Tartu", "Narva"});
 
-        Question question2 = new Questions();
+        Question question2 = new Question();
         question2.setId(10001L);
         question2.setDescription("What is the bigger lake in Estonia?");
-        question2.setOptions(new String[]{"Peipus" , "Uljaste" , "Võrtsjärv"});
+        question2.setOptions(new String[]{"Peipus", "Uljaste", "Võrtsjärv"});
 
-        Question question3 = new Questions();
-        questions.setId(10002L);
-        questions.setDescription("What is the national flower in Estonia?");
-        questions.setOptions(new String[]{"Сornflower" , "Сhamomile" , "Dandelion"});
+        Question question3 = new Question();
+        question3.setId(10002L);
+        question3.setDescription("What is the national flower in Estonia?");
+        question3.setOptions(new String[]{"Сornflower", "Сhamomile", "Dandelion"});
 
-        Question question4 = new Questions();
+        Question question4 = new Question();
         question4.setId(10003L);
         question4.setDescription("How many wonders in the world?");
-        question4.setOptions(new String[]{"3" , "8" , "7"});
+        question4.setOptions(new String[]{"3", "8", "7"});
 
-        Question question5 = new Questions();
+        Question question5 = new Question();
         question5.setId(10004L);
         question5.setDescription("What is the favourite car of Estonia?");
-        question5.setOptions(new String[]{"Skoda" , "BMW", "Audi"});
+        question5.setOptions(new String[]{"Skoda", "BMW", "Audi"});
 
-        return new Questions[]{question1, question2, question3, question4, question5};
+        return new Question[]{question1, question2, question3, question4, question5};
+    }
 
         private static int getAnswers() {
-            Answers answer1 = new Answers();
+            Answer answer1 = new Answer();
             answer1.setId(20000L);
             answer1.setQuestionId(10000L);
             answer1.setCorrectOptionIndex(0);
 
-            Answers answers2 = new Answers();
+            Answer answer2 = new Answer();
 
 
         }
@@ -114,8 +115,6 @@ public class Quiz {
 
 
 
-        for(Questions questions: questions) {
-            System.out.println(questions.getId() + ". " + questions.getDescription());
 
         }
 

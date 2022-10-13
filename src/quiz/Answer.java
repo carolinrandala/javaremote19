@@ -1,9 +1,9 @@
 package quiz;
 
-public class Answer {
+public class Question {
     private Long id;
-    private Long questionId;
-    private String correctOptionIndex;
+    private String description;
+    private String[] options;
 
     public Long getId() {
         return id;
@@ -13,20 +13,19 @@ public class Answer {
         this.id = id;
     }
 
-    public Long getQuestionId() {
-        return questionId;
+    public String getDescription() {
+        return description;
     }
 
-    public void setQuestionId(Long questionId) {
-        this.questionId = questionId;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public String getCorrectOptionIndex() {
-        return correctOptionIndex;
+    public String[] getOptions() {
+        return options;
     }
 
-    public void setCorrectOptionIndex(String correctOptionIndex) {
-        this.correctOptionIndex = correctOptionIndex;
+    public void setOptions(String[] options) {
+        this.options = options;
     }
 }
-
