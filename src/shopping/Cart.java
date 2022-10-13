@@ -18,5 +18,6 @@ public class Cart {
 
     public void setTotalPrice(float totalPrice) {
         this.totalPrice = totalPrice;
+
     }
 }

@@ -1,7 +1,6 @@
 package shopping;
 
 
-
 import java.util.Scanner;
 
 /**
