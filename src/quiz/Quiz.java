@@ -110,7 +110,7 @@ public class Quiz {
         return new Question[]{question1, question2, question3, question4, question5};
     }
 
-        private static Answer[] getAnswers() {
+        private static Question getAnswers() {
             Answer answer1 = new Answer();
             answer1.setId(20000L);
             answer1.setQuestionId(10000L);
@@ -158,10 +158,20 @@ public class Quiz {
                 return option;
             }
 
+            private static int displayTotalScore() {
 
 
 
-        }
+                            return displayTotalScore();
+                        }
+}
+
+
+
+
+
+
+
 
 
 
