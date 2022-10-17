@@ -79,6 +79,7 @@ public class Quiz {
         hasPassed = totalScore >= (double) questions.length / 2;
 
         System.out.println(hasPassed ? "PASSED!" : "FAILED!!");
+
     }
 
 
