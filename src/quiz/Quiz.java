@@ -1,5 +1,7 @@
 package quiz;
 
+import shopping.Product;
+
 import java.util.Scanner;
 
 /**
@@ -61,9 +63,10 @@ public class Quiz {
 
         Answer[] correctAnswers = getAnswers();
 
+
         // Total Score Calculation: Compare answerOptios of CorrectAnswer and the userAnswer
-        for (Answer correctAnswer : correctAnswers) {
-            for (Answer userAnswer : userAnswers) {
+        for (Answer userAnswer : userAnswers) {
+            for (Answer correctAnswer : correctAnswers) {
                 if (correctAnswer.getQuestionId() == userAnswer.getQuestionId() && correctAnswer.getCorrectOptionIndex() == userAnswer.getCorrectOptionIndex()) {
                     totalScore += rightAnswer;
                 }
@@ -73,7 +76,7 @@ public class Quiz {
         System.out.println("Total score: " + totalScore);
 
         //Pass score is 50%
-        hasPassed = totalScore >= questions.length / 2;
+        hasPassed = totalScore >= (double) questions.length / 2;
 
         System.out.println(hasPassed ? "PASSED!" : "FAILED!!");
     }
@@ -110,7 +113,7 @@ public class Quiz {
         return new Question[]{question1, question2, question3, question4, question5};
     }
 
-        private static Question getAnswers() {
+    private static Answer[] getAnswers() {
             Answer answer1 = new Answer();
             answer1.setId(20000L);
             answer1.setQuestionId(10000L);
@@ -158,12 +161,6 @@ public class Quiz {
                 return option;
             }
 
-            private static int displayTotalScore() {
-
-
-
-                            return displayTotalScore();
-                        }
 }
 
 
