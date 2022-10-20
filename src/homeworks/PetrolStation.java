@@ -1,8 +1,6 @@
 package homeworks;
 
 
-import shopping.Product;
-
 import java.util.Scanner;
 
 public class PetrolStation {
