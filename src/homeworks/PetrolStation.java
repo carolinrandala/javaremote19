@@ -14,6 +14,7 @@ public class PetrolStation {
 
     private static int displayPetrolStationmainMenu() {
         System.out.println("WELCOME TO THE PETROL STATION!");
+        System.out.println("Would you like to:");
         System.out.println("1. Refuel \n2. Pay \n3. Exit");
         return getMenuOption(3);
     }
@@ -42,12 +43,17 @@ public class PetrolStation {
         diesel.setName("Diesel");
         diesel.setPrice(2.40f);
         Product gas = new Product();
-        gas.setName("Bensin");
+        gas.setName("Gasoline");
         gas.setPrice(2.70f);
 
         return new Product[]{diesel, gas};
 
     }
-}
+
+   // private static float refuelCar(float[] gas, float[] cost){
+
+
+    }
+
 
 
