@@ -36,22 +36,14 @@ public class PetrolStation {
     }
 
 
-    private static Product[] getRandomProducts() {
-        Product diesel = new Product();
-        diesel.setName("Diesel");
-        diesel.setPrice(2.40f);
-        Product gas = new Product();
-        gas.setName("Gasoline");
-        gas.setPrice(2.70f);
 
-        return new Product[]{diesel, gas};
+
 
     }
 
-   // private static float refuelCar(float[] gas, float[] cost){
 
 
-    }
+
 
 
 
