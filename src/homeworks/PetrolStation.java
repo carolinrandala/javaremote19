@@ -26,6 +26,7 @@ public class PetrolStation {
         double totalLitres = 0;
         double totalAmount = 0;
         isContinue = scanner.nextBoolean();
+        finish = scanner.hasNextBoolean();
 
         while (isContinue) {
             totalLitres += thresholdPetrol;
@@ -35,17 +36,9 @@ public class PetrolStation {
             if(finish) {
                 System.out.println("Total amount:" + totalAmount + " €");
             }
-
-
-
-
         }
-
-
-
-        }
-
     }
+}
 
 
 
