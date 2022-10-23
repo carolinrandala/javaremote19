@@ -22,17 +22,16 @@ public class PetrolStation {
         //Within the while loop ask user if you should continue or finish.
         System.out.println("Would you like to continue or finish?");
         boolean isContinue = scanner.nextBoolean();
-        boolean finish = scanner.hasNextBoolean();
+        boolean finish = scanner.nextBoolean();
         double totalLitres = 0;
         double totalAmount = 0;
-        isContinue = scanner.nextBoolean();
-        finish = scanner.hasNextBoolean();
+        isContinue = true;
+        finish = true;
 
         while (isContinue) {
             totalLitres += thresholdPetrol;
             totalAmount = totalLitres * pricePerLitre;
             System.out.println("Total litres filled:" + totalLitres);
-
             if(finish) {
                 System.out.println("Total amount:" + totalAmount + " €");
             }
